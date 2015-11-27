@@ -23,6 +23,7 @@
 	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=253357841540620|CSpNBptAuQNfS7_2jXjSZ-455tE", "");
 	
 	$count = count($page["data"]);
+	var_dump($page["data"]);
 	$connection = new connectDB();
 	$conn = $connection -> initialDB();
 	while($count !== 0)
