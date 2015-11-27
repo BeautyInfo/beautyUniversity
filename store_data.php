@@ -19,9 +19,6 @@
 	$storeData = new storeData();
 	
 	//get fan's page
-	//表特輔大 facebook page id: 476194535860239
-	//表特淡江 facebook page id: 1528274320729788
-
 	$data = array();
 	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=253357841540620|CSpNBptAuQNfS7_2jXjSZ-455tE", "");
 	
@@ -36,18 +33,10 @@
 			$object_id = $page["data"][$count_data]["object_id"];
 			$created_time = $page["data"][$count_data]["created_time"];
 			
-			//strange string character
 			$data["message"] = str_replace("☺ ", "", trim($message));
 			$data["message"] = str_replace("\n", "", $data["message"]);
 			$data["object_id"] = $object_id;
 			$data["created_time"] = $created_time;
-			$sql = "SELECT COUNT(obj_id) FROM beauty_info WHERE obj_id = :object_id";
-
-			if($result === "cannot link database")
-			{
-				echo $result . "<br>";
-				break;
-			}
 			
 			$sql = "INSERT INTO beauty_info(message,obj_id,created_time) VALUES(:message,:object_id,:created_time)";
 			$result = $connection -> processData($conn, $sql, $data, "insert-record");
