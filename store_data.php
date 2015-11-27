@@ -23,16 +23,24 @@
 	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=253357841540620|CSpNBptAuQNfS7_2jXjSZ-455tE", "");
 	
 	$count = count($page["data"]);
-	var_dump($page["data"]);
 	$connection = new connectDB();
 	$conn = $connection -> initialDB();
 	while($count !== 0)
 	{
 		for($count_data=0;$count_data<$count;$count_data++)
 		{
-			$message = $page["data"][$count_data]["message"];
-			$object_id = $page["data"][$count_data]["object_id"];
-			$created_time = $page["data"][$count_data]["created_time"];
+			if(isset($page["data"][$count_data]["message"]))
+				$message = $page["data"][$count_data]["message"];
+			else
+				$message = "";
+			if(isset($page["data"][$count_data]["object_id"]))
+				$object_id = $page["data"][$count_data]["object_id"];
+			else
+				$object_id = "";
+			if(isset($page["data"][$count_data]["created_time"]))
+				$created_time = $page["data"][$count_data]["created_time"];
+			else
+				$created_time = "";
 			
 			$data["message"] = str_replace("☺ ", "", trim($message));
 			$data["message"] = str_replace("\n", "", $data["message"]);
