@@ -6,5 +6,5 @@
 	$conn = $connection -> initialDB();
 	$result = $connection -> processData($conn, $sql = "SELECT * FROM beauty_info", $data = "", "get-data");
 	$connection -> connectClose();
-	echo json_decode($result, true);
+	echo $result;
 ?>
