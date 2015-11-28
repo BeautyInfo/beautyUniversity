@@ -4,7 +4,7 @@
 	require 'libs/connectDB.php';
 	$connection = new connectDB();
 	$conn = $connection -> initialDB();
-	$result = $connection -> processData($conn, $sql, $data, "get-data");
+	$result = $connection -> processData($conn, $sql = "SELECT * FROM beauty_info", $data = "", "get-data");
 	$connection -> connectClose();
 	echo json_decode($result, true);
 ?>
