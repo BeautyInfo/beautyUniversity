@@ -8,7 +8,7 @@
 	$picture_type = filter_input(INPUT_GET, "picture_type");
 	$picture_type = htmlentities($picture_type);
 
-	$page = http_get("graph.facebook.com/" + $obj_id + "/picture?type=" + $picture_type);
+	$page = http_get("http://graph.facebook.com/" + $obj_id + "/picture?type=" + $picture_type, "");
 	$page = $page["FILE"];
 	echo $page;
 ?>
