@@ -19,8 +19,13 @@
 	$storeData = new storeData();
 	
 	//get fan's page
+	$page_arr = array(
+		"https://graph.facebook.com/477809915685496/feed?access_token=922569917793667|KTu9S6oja2E6yYbP0fbAD8wnHNA",
+		"https://graph.facebook.com/476194535860239/feed?access_token=922569917793667|KTu9S6oja2E6yYbP0fbAD8wnHNA"
+	);
+
 	$data = array();
-	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=253357841540620|CSpNBptAuQNfS7_2jXjSZ-455tE", "");
+	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=922569917793667|KTu9S6oja2E6yYbP0fbAD8wnHNA", "");
 	
 	$count = count($page["data"]);
 	$connection = new connectDB();
@@ -47,7 +52,11 @@
 			$data["object_id"] = $object_id;
 			$data["created_time"] = $created_time;
 			
-			$sql = "INSERT INTO beauty_info(message,obj_id,created_time) VALUES(:message,:object_id,:created_time)";
+			if($page_arr[0] === "477809915685496")
+				$sql = "INSERT INTO beauty_info(message,obj_id,created_time) VALUES(:message,:object_id,:created_time)";
+			else
+				$sql = "INSERT INTO beauty_FJU(message,obj_id,created_time) VALUES(:message,:object_id,:created_time)";
+
 			$result = $connection -> processData($conn, $sql, $data, "insert-record");
 			
 			switch($result)
