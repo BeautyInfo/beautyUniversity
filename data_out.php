@@ -4,9 +4,8 @@
 	header("Access-Control-Allow-Origin: *");
 	ob_start("ob_gzhandler");
 	require 'libs/connectDB.php';
-	$sql = "SELECT * 
-		FROM beauty_info 
-		WHERE (message LIKE '%技術學院%
+	$sql = "SELECT * FROM beauty_info 
+		WHERE (message LIKE '%技術學院%'
 		OR message LIKE '%科技大學%'
 		OR message LIKE '%科大%'
 		OR message LIKE '%專科%' 
@@ -29,6 +28,7 @@
 		AND message NOT LIKE '%高級中學%'
 		AND message NOT LIKE '%這裡有大學正妹%'
 		AND message NOT LIKE '%畢業%')";
+
 	$connection = new connectDB();
 	$conn = $connection -> initialDB();
 	$result = $connection -> processData($conn, $sql, $data = "", "get-data");
