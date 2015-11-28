@@ -25,7 +25,7 @@
 	);
 
 	$data = array();
-	$page = $storeData -> getPage("https://graph.facebook.com/477809915685496/feed?access_token=922569917793667|KTu9S6oja2E6yYbP0fbAD8wnHNA", "");
+	$page = $storeData -> getPage("https://graph.facebook.com/476194535860239/feed?access_token=922569917793667|KTu9S6oja2E6yYbP0fbAD8wnHNA", "");
 	
 	$count = count($page["data"]);
 	$connection = new connectDB();
