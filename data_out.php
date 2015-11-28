@@ -6,5 +6,5 @@
 	$conn = $connection -> initialDB();
 	$result = $connection -> processData($conn, $sql, $data, "get-data");
 	$connection -> connectClose();
-	echo json_decode($result);
+	echo json_decode($result, true);
 ?>
