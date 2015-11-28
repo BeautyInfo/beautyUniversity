@@ -5,7 +5,8 @@
 	ob_start("ob_gzhandler");
 	require 'libs/connectDB.php';
 	$school = filter_input(INPUT_GET, "school");
-	if($school === "fju") {
+	$school = htmlentities($school);
+	if($school === "university") {
 		$sql = "SELECT * FROM beauty_info 
 			WHERE (message LIKE '%技術學院%'
 			OR message LIKE '%科技大學%'
@@ -31,7 +32,7 @@
 			AND message NOT LIKE '%這裡有大學正妹%'
 			AND message NOT LIKE '%畢業%')";
 	}
-	else if($school === "university"){
+	else if($school === "FJU") {
 		$sql = "SELECT * FROM beauty_FJU";
 	}
 	else {
