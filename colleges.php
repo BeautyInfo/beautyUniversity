@@ -34,32 +34,32 @@
 			$message = str_replace("表特大學", "", $message);
 			for($j=2;$j<count($colleges);$j++)
 			{
-				if(stristr($message, "科技大學") === true)
+				if(mb_stristr($message, "科技大學") === true)
 				{
 					if(stristr($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(stristr($message, "大學") === true)
+				else if(mb_stristr($message, "大學") === true)
 				{
 					if(stristr($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(stristr($message, "科大") === true)
+				else if(mb_stristr($message, "科大") === true)
 				{
 					if(stristr($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(stristr($message, "技術學院") === true)
+				else if(mb_stristr($message, "技術學院") === true)
 				{
 					if(stristr($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(stristr($message, "專科學校") === true)
+				else if(mb_stristr($message, "專科學校") === true)
 				{
 					if(stristr($message, $value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(stristr($message, "專校") === true)
+				else if(mb_stristr($message, "專校") === true)
 				{
 					if(stristr($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
