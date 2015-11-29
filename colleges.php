@@ -29,7 +29,7 @@
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
-			for($j=3$j<count($colleges)$j++)
+			for($j=3$j<count($colleges);$j++)
 			{
 				if(stristr($message, "科技大學") === true)
 				{
