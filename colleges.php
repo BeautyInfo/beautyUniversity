@@ -11,7 +11,6 @@
 	}
 	else
 	{
-		$check_line = 0;
 		$count = 0;
 		$colleges = array();
 		
@@ -49,6 +48,8 @@
 				//$result += 1;
 			}
 			
+			$check = false;
+			$count = 0;
 			for($j=2;$j<count($colleges);$j++)
 			{
 				$colleges[$j]["name"] = str_replace("國立", "", $colleges[$j]["name"]);
@@ -56,12 +57,19 @@
 				{
 					$colleges[$j]["count"] += 1;
 					$result += 1;
+					$check = true;
 					break;
 				}
 			}
+			
+			if(!$check)
+			{
+				echo $message . "<br>";
+				$count += 1;
+			}
 		}
 		
-		echo $result . "<br>";
-		echo json_encode($colleges, JSON_PRETTY_PRINT);
+		//echo $result . "<br>";
+		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 ?>
