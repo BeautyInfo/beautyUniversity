@@ -19,7 +19,7 @@
 			$arr = explode(",", fgets($handle));
 			if(isset($arr[1]))
 			{
-				if($arr[1] !== "學校名稱")
+				if($arr[1] !== "學校名稱" && $arr[1] !== "")
 				{
 					$colleges[$count]["name"] = str_replace("台", "臺", $arr[1]);
 					$colleges[$count]["name"] = str_replace("國立", "", $colleges[$count]["name"]);
@@ -67,7 +67,7 @@
 			
 			$check = false;
 			$count = 0;
-			for($j=1;$j<count($colleges);$j++)
+			for($j=0;$j<count($colleges);$j++)
 			{
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
