@@ -1,6 +1,7 @@
 <?php
 	header("Access-Control-Allow-Origin: *");
-	header("Content-Type: application/json; charset=utf-8");
+	//header("Content-Type: application/json; charset=utf-8");
+	header("Content-Type: text/html; charset=utf-8");
 	ob_start("ob_gzhandler");
 	require 'libs/LIB_http.php';
 	$handle = fopen("u1_new.csv", "r");
@@ -76,7 +77,7 @@
 			}
 		}
 
-		echo json_encode($colleges, JSON_PRETTY_PRINT);
+		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
 	function matchCollegeName($msg, $colleges)
