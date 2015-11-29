@@ -56,26 +56,22 @@
 			$message = str_replace("臺北商業技術學院", "國立臺北商業大學", $message);
 			$message = str_replace("輔英大學", "輔英科技大學", $message);
 			
-			//ignore china university
-			$message = str_replace("中國傳媒大學", "", $message);
-			
 			if(strpos($message, "科大") !== false)
 			{
 				$message = str_replace("科大", "科技大學", $message);
 			}
-			else if(strpos($message, "專校") !== false)
+			if(strpos($message, "專校") !== false)
 			{
 				$message = str_replace("專校", "專科學校", $message);
-			}
-			else
-			{
-				//$result += 1;
 			}
 			
 			$check = false;
 			$count = 0;
 			for($j=0;$j<count($colleges);$j++)
 			{
+				//ignore china university
+				if(strpos($message, "中國傳媒大學") !== false)
+					continue;
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
 					$colleges[$j]["count"] += 1;
@@ -83,12 +79,6 @@
 					$check = true;
 					break;
 				}
-			}
-			
-			if(!$check)
-			{
-				echo $message . "<br>";
-				$count += 1;
 			}
 		}
 		
