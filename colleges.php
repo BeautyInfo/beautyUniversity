@@ -77,7 +77,8 @@
 			}
 			else
 			{
-				continue;
+				echo $message . "<br>";
+				$result += 1;
 			}
 		}
 
