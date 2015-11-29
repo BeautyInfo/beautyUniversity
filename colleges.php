@@ -29,7 +29,7 @@
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
 		$data = $data["FILE"];
 		$data = json_decode($data, true);
-		global $result = 0;
+		$result = 0;
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = trim($data[$i]["message"]);
@@ -49,14 +49,14 @@
 				//$result += 1;
 			}
 			
-			$colleges = matchCollegeName($message, $colleges);
+			$result = matchCollegeName($message, $colleges, $result);
 		}
 		
 		echo $result;
 		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
-	function matchCollegeName($msg, $colleges)
+	function matchCollegeName($msg, $colleges, $result)
 	{
 		for($j=2;$j<count($colleges);$j++)
 		{
@@ -68,6 +68,6 @@
 			}
 		}
 
-		return $colleges;
+		return $result;
 	}
 ?>
