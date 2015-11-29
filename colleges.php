@@ -1,6 +1,6 @@
 <?php
 	error_reporting(E_ALL);
-	ini_set("display_errors", "on");
+	ini_set("display_errors", "On");
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=utf-8");
 	ob_start("ob_gzhandler");
