@@ -52,7 +52,7 @@
 			for($j=2;$j<count($colleges);$j++)
 			{
 				$colleges[$j]["name"] = str_replace("國立", "", $colleges[$j]["name"]);
-				if(strpos($msg, $colleges[$j]["name"]) !== false)
+				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
 					$colleges[$j]["count"] += 1;
 					break;
