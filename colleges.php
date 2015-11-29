@@ -25,6 +25,7 @@
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
 		$data = $data["FILE"];
 		var_dump($data);
+		/*
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
@@ -66,10 +67,11 @@
 						$colleges[$j]["count"] += 1;
 
 				}
-				*/
+				
 			}
 		}
 
 		echo json_encode($colleges);
+		*/
 	}
 ?>
