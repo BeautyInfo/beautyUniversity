@@ -76,6 +76,7 @@
 	{
 		for($j=2;$j<count($colleges);$j++)
 		{
+			$colleges[$j]["message"] = $msg;
 			if(mb_strpos($msg, $colleges[$j]["name"]) !== false)
 			{
 				$colleges[$j]["count"] += 1;
