@@ -20,6 +20,7 @@
 			if(isset($arr[1]))
 			{
 				$colleges[$count]["name"] = str_replace("台", "臺", $arr[1]);
+				$colleges[$count]["name"] = str_replace("國立", "", $colleges[$count]["name"]);
 				$colleges[$count]["count"] = 0;
 				$count += 1;
 			}
@@ -64,7 +65,6 @@
 			$count = 0;
 			for($j=2;$j<count($colleges);$j++)
 			{
-				$colleges[$j]["name"] = str_replace("國立", "", $colleges[$j]["name"]);
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
 					$colleges[$j]["count"] += 1;
