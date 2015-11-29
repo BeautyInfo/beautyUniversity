@@ -49,14 +49,14 @@
 				//$result += 1;
 			}
 			
-			$result = matchCollegeName($message, $colleges, $result);
+			$result = matchCollegeName($message, $colleges);
 		}
 		
 		//echo $result;
 		echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
-	function matchCollegeName($msg, $colleges, $result)
+	function matchCollegeName($msg, $colleges)
 	{
 		for($j=2;$j<count($colleges);$j++)
 		{
@@ -64,11 +64,10 @@
 			if(strpos($msg, $colleges[$j]["name"]) !== false)
 			{
 				$colleges[$j]["count"] += 1;
-				$result += 1;
 				break;
 			}
 		}
 
-		return $result;
+		return $colleges;
 	}
 ?>
