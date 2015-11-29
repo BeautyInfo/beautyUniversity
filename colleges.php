@@ -39,19 +39,21 @@
 			$message = trim($data[$i]["message"]);
 			$message = str_replace("台", "臺", $message);
 			$message = str_replace("表特大學", "", $message);
-			$message = str_replace("文化大學", "中國文化大學", $message);
-			$message = str_replace("美和大學", "美和科技大學", $message);
-			$message = str_replace("臺北城市大學", "臺北城市科技大學", $message);
-			$message = str_replace("新生醫護管理學校", "新生醫護管理專科學校", $message);
+			$message = str_replace("文化", "中國文化", $message);
+			$message = str_replace("美和", "美和科技", $message);
+			$message = str_replace("臺北城市", "臺北城市科技", $message);
+			$message = str_replace("新生醫護管理", "新生醫護管理專科", $message);
 			$message = str_replace("美和護專", "美和科技大學", $message);
-			$message = str_replace("元培科技大學", "元培醫事科技大學", $message);
-			$message = str_replace("醒悟科技大學", "醒吾科技大學", $message);
+			$message = str_replace("元培科技", "元培醫事科技", $message);
+			$message = str_replace("醒悟科技", "醒吾科技", $message);
+			//strange message string
 			$message = str_replace("德明", "德明財經科技大學", $message);
-			$message = str_replace("華夏大學", "華夏科技大學", $message);
+			$message = str_replace("華夏", "華夏科技", $message);
 			$message = str_replace("臺北商業技術學院", "國立臺北商業大學", $message);
-			$message = str_replace("輔英大學", "輔英科技大學", $message);
+			$message = str_replace("輔英", "輔英科技", $message);
+			//strange message string
 			$message = str_replace("耕莘", "耕莘健康管理專科學校", $message);
-			//echo $message . "<br>";
+
 			if(strpos($message, "科大") !== false)
 			{
 				$message = str_replace("科大", "科技大學", $message);
@@ -85,33 +87,6 @@
 			}
 		}
 		
-		//echo $result . "<br>";
-		//echo json_encode($colleges, JSON_PRETTY_PRINT);
-	}
-	
-	function mb_str_replace($search, $replace, $subject, &$count = 0)
-	{
-		if (!is_array($subject))
-		{
-			// Normalize $search and $replace so they are both arrays of the same length
-			$searches = is_array($search) ? array_values($search) : array($search);
-			$replacements = is_array($replace) ? array_values($replace) : array($replace);
-			$replacements = array_pad($replacements, count($searches), '');
-			foreach ($searches as $key => $search)
-			{
-				$parts = mb_split(preg_quote($search), $subject);
-				$count += count($parts) - 1;
-				$subject = implode($replacements[$key], $parts);
-			}
-		}
-		else
-		{
-			// Call mb_str_replace for each subject in array, recursively
-			foreach ($subject as $key => $value)
-			{
-				$subject[$key] = mb_str_replace($search, $replace, $value, $count);
-			}
-		}
-		return $subject;
+		echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 ?>
