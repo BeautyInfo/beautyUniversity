@@ -36,13 +36,13 @@
 			$message = str_replace("台", "臺", $message);
 			$message = str_replace("表特大學", "", $message);
 			//echo $message . "<br>";
-			if(strpos($message, "科技大學"))
+			if(strpos($message, "科技大學") !== false)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(strpos($message, "大學") === true)
+			else if(strpos($message, "大學") !== false)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
@@ -78,7 +78,7 @@
 			else
 			{
 				echo $message . "<br>";
-				$result += 1;
+				//$result += 1;
 			}
 		}
 
