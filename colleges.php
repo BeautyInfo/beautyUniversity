@@ -49,25 +49,18 @@
 				//$result += 1;
 			}
 			
-			$result = matchCollegeName($message, $colleges);
+			for($j=2;$j<count($colleges);$j++)
+			{
+				$colleges[$j]["name"] = str_replace("國立", "", $colleges[$j]["name"]);
+				if(strpos($msg, $colleges[$j]["name"]) !== false)
+				{
+					$colleges[$j]["count"] += 1;
+					break;
+				}
+			}
 		}
 		
 		//echo $result;
 		echo json_encode($colleges, JSON_PRETTY_PRINT);
-	}
-
-	function matchCollegeName($msg, $colleges)
-	{
-		for($j=2;$j<count($colleges);$j++)
-		{
-			$colleges[$j]["name"] = str_replace("國立", "", $colleges[$j]["name"]);
-			if(strpos($msg, $colleges[$j]["name"]) !== false)
-			{
-				$colleges[$j]["count"] += 1;
-				break;
-			}
-		}
-
-		return $colleges;
 	}
 ?>
