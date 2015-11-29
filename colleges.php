@@ -55,12 +55,13 @@
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
 					$colleges[$j]["count"] += 1;
+					$result += 1;
 					break;
 				}
 			}
 		}
 		
-		//echo $result;
+		echo $result . "<br>";
 		echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 ?>
