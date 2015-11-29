@@ -52,8 +52,8 @@
 			$result = matchCollegeName($message, $colleges, $result);
 		}
 		
-		echo $result;
-		//echo json_encode($colleges, JSON_PRETTY_PRINT);
+		//echo $result;
+		echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
 	function matchCollegeName($msg, $colleges, $result)
