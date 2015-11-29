@@ -67,7 +67,7 @@
 			
 			$check = false;
 			$count = 0;
-			for($j=2;$j<count($colleges);$j++)
+			for($j=0;$j<count($colleges);$j++)
 			{
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
@@ -80,7 +80,6 @@
 			
 			if(!$check)
 			{
-				echo str_replace("德明科技大學", "德明財經科技大學", $message);
 				echo $message . "<br>";
 				$count += 1;
 			}
