@@ -32,10 +32,10 @@
 		$result = 0;
 		for($i=0;$i<count($data);$i++)
 		{
-			$message = trim($message);
+			$message = trim($data[$i]["message"]);
 			
 			if(mb_stristr($message, "台") !== false)
-				$message = str_replace("台", "臺", $data[$i]["message"]);
+				$message = str_replace("台", "臺", $message);
 			if(mb_stristr($message, "表特大學") !== false)
 				$message = str_replace("表特大學", "", $message);
 
