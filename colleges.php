@@ -8,7 +8,6 @@
 	{
 		echo "cannot open txt file";
 	}
-	/*
 	else
 	{
 		$check_line = 0;
@@ -27,6 +26,7 @@
 		$data = $data["FILE"];
 		for($i=0;$i<count($data);$i++)
 		{
+			/*
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
 			for($j=0$j<count($colleges);$j++)
@@ -64,9 +64,9 @@
 
 				}
 			}
+			*/
 		}
 
 		echo json_encode($colleges);
 	}
-	*/
 ?>
