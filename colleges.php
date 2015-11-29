@@ -33,45 +33,42 @@
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = trim($data[$i]["message"]);
-			
-			if(mb_stristr($message, "台") !== false)
-				$message = str_replace("台", "臺", $message);
-			if(mb_stristr($message, "表特大學") !== false)
-				$message = str_replace("表特大學", "", $message);
-			echo $message . "<br>";
-			if(mb_stristr($message, "科技大學"))
+			$message = str_replace("台", "臺", $message);
+			$message = str_replace("表特大學", "", $message);
+			//echo $message . "<br>";
+			if(mb_strpos($message, "科技大學"))
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(mb_stristr($message, "大學") === true)
+			else if(mb_strpos($message, "大學") === true)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(mb_stristr($message, "科大") === true)
+			else if(mb_strpos($message, "科大") === true)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(mb_stristr($message, "技術學院") === true)
-			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
-				
-			}
-			else if(mb_stristr($message, "專科學校") === true)
+			else if(mb_strpos($message, "技術學院") === true)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
-			else if(mb_stristr($message, "專校") === true)
+			else if(mb_strpos($message, "專科學校") === true)
+			{
+				//echo($message) . "<br>";
+				$result += 1;
+				//$colleges = matchCollegeName($message, $colleges);
+				
+			}
+			else if(mb_strpos($message, "專校") === true)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
