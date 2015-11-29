@@ -67,7 +67,7 @@
 			
 			$check = false;
 			$count = 0;
-			for($j=0;$j<count($colleges);$j++)
+			for($j=1;$j<count($colleges);$j++)
 			{
 				if(strpos($message, $colleges[$j]["name"]) !== false)
 				{
