@@ -33,7 +33,8 @@
 			AND message NOT LIKE '%畢業%')";
 	}
 	else if($school === "FJU") {
-		$sql = "SELECT * FROM beauty_FJU";
+		//$sql = "SELECT * FROM beauty_FJU";
+		$sql = "SELECT * FROM beauty_FJU WHERE (message  not LIKE '%男%' OR message LIKE '%女神%') AND LENGTH(message) <= 200";
 	}
 	else {
 		echo "invalid school name.";
