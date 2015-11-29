@@ -3,7 +3,7 @@
 	header("Content-Type: application/json; charset=utf-8");
 	ob_start("ob_gzhandler");
 	require 'libs/LIB_http.php';
-	error_reporting(-1);
+	error_reporting(E_ALL);
 	$handle = fopen("u1_new.csv", "r");
 	if(!$handle)
 	{
