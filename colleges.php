@@ -19,7 +19,7 @@
 			$arr = explode(",", fgets($handle));
 			if(isset($arr[1]))
 			{
-				$colleges[$count]["name"] = $arr[1];
+				$colleges[$count]["name"] = str_replace("台", "臺", $arr[1]);
 				$colleges[$count]["count"] = 0;
 				$count += 1;
 			}
@@ -34,6 +34,16 @@
 			$message = trim($data[$i]["message"]);
 			$message = str_replace("台", "臺", $message);
 			$message = str_replace("表特大學", "", $message);
+			$message = str_replace("文化大學", "中國文化大學", $message);
+			$message = str_replace("美和大學", "美和科技大學", $message);
+			$message = str_replace("臺北城市大學", "臺北城市科技大學", $message);
+			$message = str_replace("新生醫護管理學校", "新生醫護管理專科學校", $message);
+			$message = str_replace("美和護專", "美和科技大學", $message);
+			$message = str_replace("元培科技大學", "元培醫事科技大學", $message);
+			$message = str_replace("醒悟科技大學", "醒吾科技大學", $message);
+			$message = str_replace("德明科技大學", "德明財經科技大學", $message);
+			$message = str_replace("華夏大學", "華夏科技大學", $message);
+			$message = str_replace("臺北商業技術學院", "國立臺北商業大學", $message);
 			//echo $message . "<br>";
 			if(strpos($message, "科大") !== false)
 			{
