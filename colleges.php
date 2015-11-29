@@ -1,6 +1,4 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set("display_errors", "On");
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=utf-8");
 	ob_start("ob_gzhandler");
@@ -31,39 +29,36 @@
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
-			for($j=3$j<count($colleges);$j++)
+			for($j=3$j<count($colleges)$j++)
 			{
-				$value = str_replace("國立", "", $colleges[$j]["name"]);
-				echo "<p>" . $value . "</p>";
-				/*
 				if(stristr($message, "科技大學") === true)
 				{
-					//if(strpos($message, $value) >= 0)
+					if(strpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "大學") === true)
 				{
-					//if(strrpos($message, $value) >= 0)
+					if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "科大") === true)
 				{
-					//if(strrpos($message,$value)  >= 0)
+					if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "技術學院") === true)
 				{
-					//if(strrpos($message,$value)  >= 0)
+					if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "專科學校") === true)
 				{
-					//if(strrpos($message, $value)  >= 0)
+					if(strrpos($message, $value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "專校") === true)
 				{
-					//if(strrpos($message, $value) >= 0)
+					if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 
 				}
@@ -71,7 +66,6 @@
 				{
 					continue;
 				}
-				*/
 			}
 		}
 
