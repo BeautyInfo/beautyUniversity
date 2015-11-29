@@ -1,16 +1,15 @@
 <?php
-	require 'libs/LIB_http.php';
 	header("Access-Control-Allow-Origin: *");
 	ob_start("ob_gzhandler");
+	header("Content-Type: application/json; charset=utf-8");
+	require 'libs/LIB_http.php';
 	$handle = fopen("u1_new.csv", "r");
 	if(!$handle)
 	{
-		header("Content-Type: text/plain; charset=utf-8");
 		echo "cannot open txt file";
 	}
 	else
 	{
-		header("Content-Type: application/json; charset=utf-8");
 		$check_line = 0;
 		$count = 0;
 		$colleges = array();
