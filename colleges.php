@@ -24,18 +24,17 @@
 
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
 		$data = $data["FILE"];
-		var_dump($data);
-		/*
+
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			echo $message = str_replace("表特大學", "", $message) . "<br>";
-
+			/*
 			for($j=3$j<count($colleges);$j++)
 			{
 				$value = str_replace("國立", "", $colleges[$j]["name"]);
 				echo mb_stristr($message, "科技大學") . "<br>";
-				/*
+				
 				if(mb_stristr($message, "科技大學") === true)
 				{
 					//if(mb_stristr($message, $value) === true)
@@ -67,11 +66,10 @@
 						$colleges[$j]["count"] += 1;
 
 				}
-				
 			}
+			*/
 		}
 
 		echo json_encode($colleges);
-		*/
 	}
 ?>
