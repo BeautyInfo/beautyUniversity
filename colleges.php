@@ -17,9 +17,12 @@
 		while (!feof($handle))
 		{
 			$arr = explode(",", fgets($handle));
-			$colleges[$count]["name"] = $arr[1];
-			$colleges[$count]["count"] = 0;
-			$count += 1;
+			if(isset($arr[1]))
+			{
+				$colleges[$count]["name"] = $arr[1];
+				$colleges[$count]["count"] = 0;
+				$count += 1;
+			}
 		}
 
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
