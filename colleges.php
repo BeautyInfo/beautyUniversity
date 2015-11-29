@@ -34,6 +34,7 @@
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
+			$message = trim($message);
 			if(mb_stristr($message, "科技大學"))
 			{
 				echo($message) . "<br>";
