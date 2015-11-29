@@ -48,27 +48,27 @@
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(strpos($message, "科大") === true)
+			else if(strpos($message, "科大") !== false)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			else if(strpos($message, "技術學院") === true)
-			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
-				
-			}
-			else if(strpos($message, "專科學校") === true)
+			else if(strpos($message, "技術學院") !== false)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
-			else if(strpos($message, "專校") === true)
+			else if(strpos($message, "專科學校") !== false)
+			{
+				//echo($message) . "<br>";
+				$result += 1;
+				//$colleges = matchCollegeName($message, $colleges);
+				
+			}
+			else if(strpos($message, "專校") !== false)
 			{
 				//echo($message) . "<br>";
 				$result += 1;
