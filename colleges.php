@@ -33,48 +33,55 @@
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
 			if(mb_stristr($message, "科技大學"))
-				echo("arg1");
-			break;
-			for($j=2;$j<count($colleges);$j++)
 			{
-				if(mb_stristr($message, "科技大學") === true)
-				{
-					//if(stristr($message, $value) >= 0)
-						$colleges[$j]["count"] += 1;
-				}
-				else if(mb_stristr($message, "大學") === true)
-				{
-					//if(stristr($message, $value) >= 0)
-						$colleges[$j]["count"] += 1;
-				}
-				else if(mb_stristr($message, "科大") === true)
-				{
-					//if(stristr($message,$value)  >= 0)
-						$colleges[$j]["count"] += 1;
-				}
-				else if(mb_stristr($message, "技術學院") === true)
-				{
-					//if(stristr($message,$value)  >= 0)
-						$colleges[$j]["count"] += 1;
-				}
-				else if(mb_stristr($message, "專科學校") === true)
-				{
-					//if(stristr($message, $value)  >= 0)
-						$colleges[$j]["count"] += 1;
-				}
-				else if(mb_stristr($message, "專校") === true)
-				{
-					//if(stristr($message, $value) >= 0)
-						$colleges[$j]["count"] += 1;
+				$colleges = matchCollegeName($message, $colleges);
+			}
+			if(mb_stristr($message, "科技大學") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
+			}
+			else if(mb_stristr($message, "大學") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
+			}
+			else if(mb_stristr($message, "科大") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
+			}
+			else if(mb_stristr($message, "技術學院") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
+				
+			}
+			else if(mb_stristr($message, "專科學校") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
+				
+			}
+			else if(mb_stristr($message, "專校") === true)
+			{
+				$colleges = matchCollegeName($message, $colleges);
 
-				}
-				else
-				{
-					continue;
-				}
+			}
+			else
+			{
+				continue;
 			}
 		}
 
-		//echo json_encode($colleges, JSON_PRETTY_PRINT);
+		echo json_encode($colleges, JSON_PRETTY_PRINT);
+	}
+
+	function matchCollegeName($msg, $colleges)
+	{
+		for($j=2;$j<count($colleges);$j++)
+		{
+			if(strpos($message, $value) !== false)
+			{
+				$colleges[$j]["count"] += 1;
+			}
+		}
+
+		return $colleges;
 	}
 ?>
