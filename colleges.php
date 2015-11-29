@@ -32,16 +32,15 @@
 			for($j=3$j<count($colleges);$j++)
 			{
 				$value = str_replace("國立", "", $colleges[$j]["name"]);
-				echo mb_stristr($message, "科技大學") . "<br>";
 				
 				if(mb_stristr($message, "科技大學") === true)
 				{
-					//if(mb_stristr($message, $value) === true)
+					if(mb_stristr($message, $value) === true)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(mb_stristr($message, "大學") === true)
 				{
-					//if(mb_strrpos($message, $value) === true)
+					if(mb_strrpos($message, $value) === true)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(mb_stristr($message, "科大") === true)
@@ -64,6 +63,10 @@
 					if(mb_strrpos($message, $value) === true)
 						$colleges[$j]["count"] += 1;
 
+				}
+				else
+				{
+					continue;
 				}
 			}
 		}
