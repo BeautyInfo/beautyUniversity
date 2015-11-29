@@ -41,6 +41,7 @@
 					if(mb_strrpos($message, $value) === true)
 						$colleges[$j]["count"] += 1;
 				}
+				/*
 				else if(mb_stristr($message, "科大") === true)
 				{
 					if(mb_strrpos($message,$value) === true)
@@ -62,6 +63,7 @@
 						$colleges[$j]["count"] += 1;
 
 				}
+				*/
 			}
 		}
 
