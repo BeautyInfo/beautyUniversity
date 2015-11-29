@@ -60,6 +60,7 @@
 	{
 		for($j=2;$j<count($colleges);$j++)
 		{
+			str_replace("國立", "", $colleges[$j]["name"]);
 			if(strpos($msg, $colleges[$j]["name"]) !== false)
 			{
 				$colleges[$j]["count"] += 1;
