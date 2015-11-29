@@ -79,6 +79,7 @@
 			if(mb_strpos($msg, $colleges[$j]["name"]) !== false)
 			{
 				$colleges[$j]["count"] += 1;
+				break;
 			}
 		}
 
