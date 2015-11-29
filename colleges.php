@@ -39,18 +39,18 @@
 			$message = trim($data[$i]["message"]);
 			$message = str_replace("台", "臺", $message);
 			$message = str_replace("表特大學", "", $message);
-			$message = str_replace("文化", "中國文化", $message);
-			$message = str_replace("美和", "美和科技", $message);
-			$message = str_replace("臺北城市", "臺北城市科技", $message);
-			$message = str_replace("新生醫護管理", "新生醫護管理專科", $message);
+			$message = str_replace("文化大學", "中國文化大學", $message);
+			$message = str_replace("美和大學", "美和科技大學", $message);
+			$message = str_replace("臺北城市大學", "臺北城市科技大學", $message);
+			$message = str_replace("新生醫護管理學校", "新生醫護管理專科學校", $message);
 			$message = str_replace("美和護專", "美和科技大學", $message);
-			$message = str_replace("元培科技", "元培醫事科技", $message);
-			$message = str_replace("醒悟科技", "醒吾科技", $message);
+			$message = str_replace("元培科技大學", "元培醫事科技大學", $message);
+			$message = str_replace("醒悟科技大學", "醒吾科技大學", $message);
 			//strange message string
 			$message = str_replace("德明", "德明財經科技大學", $message);
-			$message = str_replace("華夏", "華夏科技", $message);
+			$message = str_replace("華夏大學", "華夏科技大學", $message);
 			$message = str_replace("臺北商業技術學院", "國立臺北商業大學", $message);
-			$message = str_replace("輔英", "輔英科技", $message);
+			$message = str_replace("輔英大學", "輔英科技大學", $message);
 			//strange message string
 			$message = str_replace("耕莘", "耕莘健康管理專科學校", $message);
 
