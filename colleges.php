@@ -3,6 +3,7 @@
 	header("Content-Type: application/json; charset=utf-8");
 	ob_start("ob_gzhandler");
 	require 'libs/LIB_http.php';
+	error_reporting(-1);
 	$handle = fopen("u1_new.csv", "r");
 	if(!$handle)
 	{
@@ -32,7 +33,8 @@
 			for($j=3$j<count($colleges);$j++)
 			{
 				$value = str_replace("國立", "", $colleges[$j]["name"]);
-				
+				echo "<p>" . $value . "</p>";
+				/*
 				if(stristr($message, "科技大學") === true)
 				{
 					//if(strpos($message, $value) >= 0)
@@ -68,6 +70,7 @@
 				{
 					continue;
 				}
+				*/
 			}
 		}
 
