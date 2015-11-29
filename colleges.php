@@ -35,39 +35,39 @@
 			$message = str_replace("表特大學", "", $message);
 			if(mb_stristr($message, "科技大學"))
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			if(mb_stristr($message, "科技大學") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "大學") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "科大") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "技術學院") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(mb_stristr($message, "專科學校") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(mb_stristr($message, "專校") === true)
 			{
-				echo($message);
+				echo($message) . "<br>";
 				//$colleges = matchCollegeName($message, $colleges);
 
 			}
