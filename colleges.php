@@ -19,10 +19,14 @@
 			$arr = explode(",", fgets($handle));
 			if(isset($arr[1]))
 			{
-				$colleges[$count]["name"] = str_replace("台", "臺", $arr[1]);
-				$colleges[$count]["name"] = str_replace("國立", "", $colleges[$count]["name"]);
-				$colleges[$count]["count"] = 0;
-				$count += 1;
+				if($arr[1] !== "學校名稱")
+				{
+					$colleges[$count]["name"] = str_replace("台", "臺", $arr[1]);
+					$colleges[$count]["name"] = str_replace("國立", "", $colleges[$count]["name"]);
+					$colleges[$count]["count"] = 0;
+					$count += 1;
+					
+				}
 			}
 		}
 
@@ -76,6 +80,7 @@
 			
 			if(!$check)
 			{
+				echo str_replace("德明科技大學", "德明財經科技大學", $message);
 				echo $message . "<br>";
 				$count += 1;
 			}
