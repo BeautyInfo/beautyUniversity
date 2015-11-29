@@ -32,7 +32,8 @@
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
 			$message = str_replace("表特大學", "", $message);
-			echo mb_stristr($message, "科技大學");
+			if(mb_stristr($message, "科技大學"))
+				echo("arg1");
 			break;
 			for($j=2;$j<count($colleges);$j++)
 			{
