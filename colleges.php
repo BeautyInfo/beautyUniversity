@@ -38,51 +38,52 @@
 			//echo $message . "<br>";
 			if(strpos($message, "科技大學") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(strpos($message, "大學") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(strpos($message, "科大") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(strpos($message, "技術學院") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(strpos($message, "專科學校") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(strpos($message, "專校") !== false)
 			{
-				//echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
+				$colleges = matchCollegeName($message, $colleges);
 
 			}
 			else
 			{
-				echo $message . "<br>";
 				//$result += 1;
 			}
 		}
 
-		echo($result);
+		echo count($colleges);
 		//echo json_encode($colleges, JSON_PRETTY_PRINT);
+	}
+
+	function matchCollegeName($msg, $colleges)
+	{
+		for($j=2;$j<count($colleges);$j++)
+		{
+			if(strpos($msg, $colleges[$j]["name"]) !== false)
+			{
+				$colleges[$j]["count"] += 1;
+				break;
+			}
+		}
+
+		return $colleges;
 	}
 ?>
