@@ -35,32 +35,32 @@
 				
 				if(stristr($message, "科技大學") === true)
 				{
-					if(strpos($message, $value) >= 0)
+					//if(strpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "大學") === true)
 				{
-					if(strrpos($message, $value) >= 0)
+					//if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "科大") === true)
 				{
-					if(strrpos($message,$value)  >= 0)
+					//if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "技術學院") === true)
 				{
-					if(strrpos($message,$value)  >= 0)
+					//if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "專科學校") === true)
 				{
-					if(strrpos($message, $value)  >= 0)
+					//if(strrpos($message, $value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
 				else if(stristr($message, "專校") === true)
 				{
-					if(strrpos($message, $value) >= 0)
+					//if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 
 				}
