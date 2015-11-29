@@ -40,12 +40,6 @@
 				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
-			if(mb_stristr($message, "科技大學") === true)
-			{
-				echo($message) . "<br>";
-				$result += 1;
-				//$colleges = matchCollegeName($message, $colleges);
-			}
 			else if(mb_stristr($message, "大學") === true)
 			{
 				echo($message) . "<br>";
