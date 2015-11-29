@@ -52,7 +52,7 @@
 			$colleges = matchCollegeName($message, $colleges);
 		}
 		
-		echo count($colleges);
+		echo $result;
 		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
@@ -63,6 +63,7 @@
 			if(strpos($msg, $colleges[$j]["name"]) !== false)
 			{
 				$colleges[$j]["count"] += 1;
+				$result += 1;
 				break;
 			}
 		}
