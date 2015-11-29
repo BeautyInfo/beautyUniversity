@@ -29,6 +29,7 @@
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
 		$data = $data["FILE"];
 		$data = json_decode($data, true);
+		$result = 0;
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = str_replace("台", "臺", $data[$i]["message"]);
@@ -36,38 +37,45 @@
 			if(mb_stristr($message, "科技大學"))
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			if(mb_stristr($message, "科技大學") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "大學") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "科大") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 			}
 			else if(mb_stristr($message, "技術學院") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(mb_stristr($message, "專科學校") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 				
 			}
 			else if(mb_stristr($message, "專校") === true)
 			{
 				echo($message) . "<br>";
+				$result += 1;
 				//$colleges = matchCollegeName($message, $colleges);
 
 			}
@@ -77,6 +85,7 @@
 			}
 		}
 
+		echo($result);
 		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
 
