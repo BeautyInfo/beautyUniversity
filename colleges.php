@@ -4,6 +4,7 @@
 	ob_start("ob_gzhandler");
 	require 'libs/LIB_http.php';
 	error_reporting(E_ALL);
+	ini_set("display_errors", "on");
 	$handle = fopen("u1_new.csv", "r");
 	if(!$handle)
 	{
