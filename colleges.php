@@ -36,39 +36,22 @@
 			$message = str_replace("台", "臺", $message);
 			$message = str_replace("表特大學", "", $message);
 			//echo $message . "<br>";
-			if(strpos($message, "科技大學") !== false)
+			if(strpos($message, "科大") !== false)
 			{
-				$colleges = matchCollegeName($message, $colleges);
-			}
-			else if(strpos($message, "大學") !== false)
-			{
-				$colleges = matchCollegeName($message, $colleges);
-			}
-			else if(strpos($message, "科大") !== false)
-			{
-				$colleges = matchCollegeName($message, $colleges);
-			}
-			else if(strpos($message, "技術學院") !== false)
-			{
-				$colleges = matchCollegeName($message, $colleges);
-				
-			}
-			else if(strpos($message, "專科學校") !== false)
-			{
-				$colleges = matchCollegeName($message, $colleges);
-				
+				$message = str_replace("科大", "科技大學", $message);
 			}
 			else if(strpos($message, "專校") !== false)
 			{
-				$colleges = matchCollegeName($message, $colleges);
-
+				$message = str_replace("專校", "專科學校", $message);
 			}
 			else
 			{
 				//$result += 1;
 			}
+			
+			$colleges = matchCollegeName($message, $colleges);
 		}
-
+		
 		echo count($colleges);
 		//echo json_encode($colleges, JSON_PRETTY_PRINT);
 	}
