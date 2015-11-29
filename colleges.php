@@ -44,6 +44,8 @@
 			$message = str_replace("德明科技大學", "德明財經科技大學", $message);
 			$message = str_replace("華夏大學", "華夏科技大學", $message);
 			$message = str_replace("臺北商業技術學院", "國立臺北商業大學", $message);
+			$message = str_replace("輔英大學", "輔英科技大學", $message);
+			$message = str_replace("耕莘專科學校", "耕莘健康管理專科學校", $message);
 			//echo $message . "<br>";
 			if(strpos($message, "科大") !== false)
 			{
