@@ -8,6 +8,7 @@
 	{
 		echo "cannot open txt file";
 	}
+	/*
 	else
 	{
 		$check_line = 0;
@@ -67,4 +68,5 @@
 
 		echo json_encode($colleges);
 	}
+	*/
 ?>
