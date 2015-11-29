@@ -29,7 +29,7 @@
 		$data = http_get("https://mywebservice.info/beautyUniversity/data_out.php?school=university", $target = "");
 		$data = $data["FILE"];
 		$data = json_decode($data, true);
-		$result = 0;
+		global $result = 0;
 		for($i=0;$i<count($data);$i++)
 		{
 			$message = trim($data[$i]["message"]);
