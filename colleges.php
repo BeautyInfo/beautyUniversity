@@ -1,7 +1,7 @@
 <?php
 	header("Access-Control-Allow-Origin: *");
-	ob_start("ob_gzhandler");
 	header("Content-Type: application/json; charset=utf-8");
+	ob_start("ob_gzhandler");
 	require 'libs/LIB_http.php';
 	$handle = fopen("u1_new.csv", "r");
 	if(!$handle)
