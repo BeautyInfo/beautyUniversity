@@ -33,34 +33,34 @@
 			{
 				$value = str_replace("國立", "", $colleges[$j]["name"]);
 				
-				if(mb_stristr($message, "科技大學") === true)
+				if(stristr($message, "科技大學") === true)
 				{
-					if(mb_stristr($message, $value) === true)
+					if(strpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(mb_stristr($message, "大學") === true)
+				else if(stristr($message, "大學") === true)
 				{
-					if(mb_strrpos($message, $value) === true)
+					if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(mb_stristr($message, "科大") === true)
+				else if(stristr($message, "科大") === true)
 				{
-					if(mb_strrpos($message,$value) === true)
+					if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(mb_stristr($message, "技術學院") === true)
+				else if(stristr($message, "技術學院") === true)
 				{
-					if(mb_strrpos($message,$value) === true)
+					if(strrpos($message,$value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(mb_stristr($message, "專科學校") === true)
+				else if(stristr($message, "專科學校") === true)
 				{
-					if(mb_strrpos($message, $value) === true)
+					if(strrpos($message, $value)  >= 0)
 						$colleges[$j]["count"] += 1;
 				}
-				else if(mb_stristr($message, "專校") === true)
+				else if(stristr($message, "專校") === true)
 				{
-					if(mb_strrpos($message, $value) === true)
+					if(strrpos($message, $value) >= 0)
 						$colleges[$j]["count"] += 1;
 
 				}
