@@ -70,6 +70,6 @@
 			*/
 		}
 
-		echo json_encode($colleges);
+		//echo json_encode($colleges);
 	}
 ?>
