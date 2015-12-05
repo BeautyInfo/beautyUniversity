@@ -1,6 +1,5 @@
 <?php
 	require 'connectDB.php';
-	require 'LIB_http.php';
 	class getData {
 		
 		public function __construct() {
