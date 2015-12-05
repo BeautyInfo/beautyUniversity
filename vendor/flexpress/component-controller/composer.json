@@ -1,0 +1,10 @@
+{
+    "name": "flexpress/component-controller",
+    "description": "Controller component for WordPress",
+    "autoload": {
+        "psr-4": {
+            "FlexPress\\Components\\Controller\\": "src/FlexPress//Components/Controller/"
+        }
+    }
+
+}
