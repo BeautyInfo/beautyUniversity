@@ -2,7 +2,7 @@
 	require "libs/getData.php";
 	require "libs/analytic.php";
 	class myModel {
-		public function dispatchModel($request, $tableName = null, $sql = null) {
+		public function dispatchModel($request, $tableName, $sql) {
 			$result = null;
 			switch($request) {
 				case "getData":
