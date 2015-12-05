@@ -12,14 +12,14 @@
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		$req = htmlentities($name);
-		$controller = new myController($router);
+		$controller = new myController();
 		echo $controller -> indexAction("school_" . $req);
 	});
 	
 	$router -> get('/data_out/school/colleges/(\w+)', function($name) {
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
-		$controller = new myController($router);
+		$controller = new myController();
 		echo $controller -> indexAction("colleges_" . $req);
 	});
 	
