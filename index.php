@@ -5,7 +5,6 @@
 	
 	// Create Router instance
 	$router = new \Bramus\Router\Router();
-	$controller = new myController($router);
 	
 	$router->get('/', function() {
 		echo "Welcome to beautyUniversity JSON api";
@@ -13,12 +12,14 @@
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		$req = htmlentities($name);
+		$controller = new myController($router);
 		echo $controller -> indexAction("school_" . $req);
 	});
 	
 	$router -> get('/data_out/school/colleges/(\w+)', function($name) {
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
+		$controller = new myController($router);
 		echo $controller -> indexAction("colleges_" . $req);
 	});
 	
