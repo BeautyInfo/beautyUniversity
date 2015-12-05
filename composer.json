@@ -1,0 +1,6 @@
+{
+	"require":{
+		"flexpress/component-controller":"~1.0.0",
+		"bramus/router":"~1.0"
+	}
+}

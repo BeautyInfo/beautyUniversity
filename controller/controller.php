@@ -1,5 +1,5 @@
 <?php
-	require_once "../model/model.php";
+	require_once "model/model.php";
 	class PageController extends FlexPress\Components\Controller\AbstractController {
 		public function indexAction($request) {
 			$model = new myModel();
