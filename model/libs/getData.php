@@ -1,12 +1,7 @@
 <?php
 	require 'connectDB.php';
 	class getData {
-		
-		public function __construct() {
-			$this -> sql = $sql;
-		}
-		
-		public function getJSON() {
+		public function getJSON($sql) {
 			$connection = new connectDB();
 			$conn = $connection -> initialDB();
 			if($conn === null) {

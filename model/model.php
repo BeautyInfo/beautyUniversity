@@ -6,8 +6,8 @@
 			$result = null;
 			switch($request) {
 				case "getData":
-					$data = new getData($sql);
-					$result = $data -> getJSON();
+					$data = new getData();
+					$result = $data -> getJSON($sql);
 					break;
 				case "analytic":
 					$data = new analytic($name);
