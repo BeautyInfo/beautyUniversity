@@ -6,7 +6,7 @@
 			$this -> sql = $sql;
 		}
 		
-		public function getJSON($sql) {
+		public function getJSON() {
 			$connection = new connectDB();
 			$conn = $connection -> initialDB();
 			if($conn === null) {

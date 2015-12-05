@@ -7,7 +7,7 @@
 			switch($request) {
 				case "getData":
 					$data = new getData($sql);
-					$result = $data -> getJSON($sql);
+					$result = $data -> getJSON();
 					break;
 				case "analytic":
 					$data = new analytic($name);
