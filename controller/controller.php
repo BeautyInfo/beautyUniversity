@@ -1,6 +1,6 @@
 <?php
 	require_once "model/model.php";
-	class PageController extends FlexPress\Components\Controller\AbstractController {
+	class myController extends FlexPress\Components\Controller\AbstractController {
 		public function indexAction($request) {
 			$model = new myModel();
 			$sql = "";
