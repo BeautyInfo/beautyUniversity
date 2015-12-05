@@ -27,4 +27,6 @@
 		echo "invalid request url";
 	});
 	
+	$router -> run();
+	
 ?>
