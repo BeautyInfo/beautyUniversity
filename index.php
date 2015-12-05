@@ -7,6 +7,10 @@
 	$router = new \Bramus\Router\Router();
 	$controller = new myController($router);
 	
+	$router->get('/', function() {
+		echo "Welcome to beautyUniversity JSON api";
+	});
+	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		$req = htmlentities($name);
 		echo $controller -> indexAction("school_" . $req);
