@@ -43,6 +43,8 @@
 				case "colleges_FJU":
 					$result = $model -> dispatchModel("analytic");
 					break;
+				default:
+					$request = "invalid request string";
 			}
 			
 			return $result;
