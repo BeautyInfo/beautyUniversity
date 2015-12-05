@@ -1,6 +1,6 @@
 <?php
-	require 'libs/connectDB.php';
-	require 'libs/LIB_http.php';
+	require 'connectDB.php';
+	require 'LIB_http.php';
 	class getData {
 		
 		public function __construct() {

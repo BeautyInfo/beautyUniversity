@@ -1,6 +1,5 @@
 <?php
-	require 'libs/connectDB.php';
-	require 'libs/LIB_http.php';
+	require 'LIB_http.php';
 	class analytic {
 		public function __construct() {
 			$this -> name = $name;
