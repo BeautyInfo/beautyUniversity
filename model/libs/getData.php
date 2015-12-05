@@ -24,7 +24,7 @@
 					$count += 1;
 				}
 
-				$result = json_encode($result, JSON_PRETTY_PRINT);
+				$result = json_encode($result);
 				$conn = null;
 			}
 			return $result;
