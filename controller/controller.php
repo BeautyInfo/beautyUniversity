@@ -44,7 +44,7 @@
 					$result = $model -> dispatchModel("analytic");
 					break;
 				default:
-					$result = "invalid request string";
+					$result = $request;
 			}
 			
 			return $result;
