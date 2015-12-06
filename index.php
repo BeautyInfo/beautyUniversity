@@ -9,7 +9,6 @@
 
 	$router -> before('GET', '/.*', function() {
 		header('X-Powered-By: router');
-		header('Server: Apache');
 	});
 
 	$router->get('/', function() {
@@ -17,6 +16,7 @@
 	});
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
+		header('Server: Apache');
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
