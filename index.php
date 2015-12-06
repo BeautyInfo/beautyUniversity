@@ -12,12 +12,14 @@
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		header('Content-Type: application/json; charset=utf-8');
+		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
 		$controller = new myController($req);
 		echo $controller -> indexAction("school_" . $req);
 	});
 	
 	$router -> get('/data_out/school/colleges/(\w+)', function($name) {
+		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
 		$controller = new myController($req);

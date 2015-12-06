@@ -11,7 +11,7 @@
 					break;
 				case "analytic":
 					$data = new analytic($name);
-					$result = $data -> getAnalyticRes();
+					$result = $data -> getAnalyticRes($name);
 					break;
 			}
 			
