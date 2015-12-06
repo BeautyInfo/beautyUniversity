@@ -26,7 +26,8 @@
 						}
 					}
 				}
-				file_put_contents("files/u1_new.json", $colleges);
+				
+				file_put_contents("files/u1_new.json", json_encode($colleges));
 				return $colleges;
 			}
 		}
