@@ -31,10 +31,12 @@
 		echo $controller -> indexAction("colleges_" . $req);
 	});
 	
+	/*
 	$router->set404(function() {
 		header('HTTP/1.1 404 Not Found');
 		echo "invalid request url";
 	});
+	*/
 	
 	$router -> run();
 ?>
