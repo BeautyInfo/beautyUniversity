@@ -26,7 +26,7 @@
 						}
 					}
 				}
-				
+				file_put_contents("files/u1_new.json", $colleges);
 				return $colleges;
 			}
 		}
@@ -76,7 +76,13 @@
 		}
 		
 		public function getAnalyticRes() {
-			$handle = $this -> parseFile("files/u1_new.csv");
+			$fileName = "";
+			if($name !== "FJU")
+				$fileName = "files/u1_new.csv";
+			else
+				$fileName = "files/fju.csv";
+
+			$handle = $this -> parseFile($fileName);
 			if($handle === false) {
 				return "cannot open csv file";
 			}
