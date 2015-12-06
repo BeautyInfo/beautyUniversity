@@ -15,10 +15,6 @@
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
-	$router -> before('GET', '/.*', function() {
-		header('X-Powered-By: router');
-	});
-	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
@@ -37,6 +33,7 @@
 	
 	$router->set404(function() {
 		header('HTTP/1.1 404 Not Found');
+		header('Content-Type: text/plain; charset=utf-8');
 		echo "invalid request url";
 	});
 	
