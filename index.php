@@ -6,11 +6,10 @@
 	// Create Router instance
 	$router = new \Bramus\Router\Router();
 	
-	/*
+
 	$router -> before('GET', '/.*', function() {
 		header('X-Powered-By: router');
 	});
-	*/
 	
 	$router->get('/', function() {
 		echo "Welcome to beautyUniversity JSON api";
