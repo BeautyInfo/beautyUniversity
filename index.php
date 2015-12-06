@@ -34,7 +34,8 @@
 	$router->set404(function() {
 		header('HTTP/1.1 404 Not Found');
 		header('Content-Type: text/plain; charset=utf-8');
-		echo "invalid request url";
+		echo $_SERVER["HTTPS"];
+		//echo "invalid request url";
 	});
 	
 	$router -> run();
