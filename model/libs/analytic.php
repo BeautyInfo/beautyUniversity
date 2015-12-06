@@ -78,13 +78,13 @@
 		public function getAnalyticRes() {
 			$handle = $this -> parseFile("files/u1_new.csv");
 			if($handle === false) {
-				return "cannot open txt file";
+				return "cannot open csv file";
 			}
 			else {
 				$data = $this -> httpGet("https://mywebservice.info/beautyUniversity/data_out/school/university");
 				$colleges = $handle;
 				$result = $this -> processStr($colleges, $data);
-				return json_encode($result, JSON_PRETTY_PRINT);
+				return json_encode($result);
 			}
 		}
 	}

@@ -38,10 +38,10 @@
 					$result = $model -> dispatchModel("getData", null, $sql);
 					break;
 				case "colleges_university":
-					$result = $model -> dispatchModel("analytic", "university");
+					$result = $model -> dispatchModel("analytic", "university", null);
 					break;
 				case "colleges_FJU":
-					$result = $model -> dispatchModel("analytic", "FJU");
+					$result = $model -> dispatchModel("analytic", "FJU", null);
 					break;
 				default:
 					$result = "invalid request string";
