@@ -6,7 +6,12 @@
 	// Create Router instance
 	$router = new \Bramus\Router\Router();
 	
-	$router->get('/:443', function() {
+	$router -> before('GET', '/.*', function() {
+		header("HTTP/1.1 301 Moved Permanently");
+		header("Location: https://mywebservice.info/beautyUniversity/");
+	});
+	
+	$router->get('/', function() {
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
