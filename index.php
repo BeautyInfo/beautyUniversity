@@ -15,7 +15,7 @@
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
-	$router->get('/(\w+)', function($id) {
+	$router->get('/(\d+)', function($id) {
 		echo "Welcome to beautyUniversity JSON api version: " . htmlentities($id);
 	});
 	
