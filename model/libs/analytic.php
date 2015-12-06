@@ -77,7 +77,7 @@
 		
 		public function getAnalyticRes() {
 			$fileName = "";
-			if($name !== "FJU")
+			if($this -> name !== "FJU")
 				$fileName = "files/u1_new.csv";
 			else
 				$fileName = "files/fju.csv";
