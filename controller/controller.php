@@ -31,17 +31,17 @@
 					AND message NOT LIKE '%高級中學%'
 					AND message NOT LIKE '%這裡有大學正妹%'
 					AND message NOT LIKE '%畢業%')";
-					$result = $model -> dispatchModel("getData", "beauty_info", $sql);
+					$result = $model -> dispatchModel("getData", null, $sql);
 					break;
 				case "school_FJU":
 					$sql = "SELECT * FROM beauty_FJU WHERE (message  not LIKE '%男%' OR message LIKE '%女神%') AND LENGTH(message) <= 200 AND LENGTH(message) > 0";
-					$result = $model -> dispatchModel("getData", "beauty_FJU", $sql);
+					$result = $model -> dispatchModel("getData", null, $sql);
 					break;
 				case "colleges_university":
-					$result = $model -> dispatchModel("analytic");
+					$result = $model -> dispatchModel("analytic", "university");
 					break;
 				case "colleges_FJU":
-					$result = $model -> dispatchModel("analytic");
+					$result = $model -> dispatchModel("analytic", "FJU");
 					break;
 				default:
 					$result = "invalid request string";
