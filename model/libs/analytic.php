@@ -1,7 +1,7 @@
 <?php
 	require 'LIB_http.php';
 	class analytic {
-		public function __construct() {
+		public function __construct($name) {
 			$this -> name = $name;
 		}
 		
