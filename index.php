@@ -16,7 +16,6 @@
 	});
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
-		header('Server: Apache');
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
@@ -35,7 +34,8 @@
 	$router->set404(function() {
 		header('HTTP/1.1 404 Not Found');
 		header('Content-Type: text/plain; charset=utf-8');
-		echo "invalid request url";
+		//echo "invalid request url";
+		echo $_SERVER["HTTPS"];
 	});
 	
 	$router -> run();
