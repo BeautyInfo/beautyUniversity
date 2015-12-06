@@ -6,7 +6,7 @@
 	// Create Router instance
 	$router = new \Bramus\Router\Router();
 	
-	$router->get('https://mywebservice.info/', function() {
+	$router->get('/:443', function() {
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
