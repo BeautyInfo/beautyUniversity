@@ -72,7 +72,7 @@
 				}
 			}
 			
-			return $data;
+			return $colleges;
 		}
 		
 		public function getAnalyticRes() {
