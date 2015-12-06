@@ -9,6 +9,12 @@
 
 	$router -> before('GET', '/.*', function() {
 		header('X-Powered-By: router');
+		header('Server: Apache');
+	});
+	
+	$router -> before('GET', '/data_out/school/.*', function() {
+		header('X-Powered-By: router');
+		header('Server: Apache');
 	});
 	
 	$router->get('/', function() {
