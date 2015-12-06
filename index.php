@@ -11,6 +11,7 @@
 	});
 	
 	$router->get('/data_out/school/(\w+)', function($name) {
+		header('Content-Type: application/json; charset=utf-8');
 		$req = htmlentities($name);
 		$controller = new myController($req);
 		echo $controller -> indexAction("school_" . $req);
