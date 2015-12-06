@@ -81,13 +81,10 @@
 				return "cannot open csv file";
 			}
 			else {
-				$data = $this -> httpGet("https://mywebservice.info/beautyUniversity/data_out/school/university");
+				$data = $this -> httpGet("http://mywebservice.info/beautyUniversity/data_out/school/university");
 				$colleges = $handle;
 				$result = $this -> processStr($colleges, $data);
-				if($result === null)
-					return "$result is null";
-				else
-					return json_encode($result);
+				return json_encode($result);
 			}
 		}
 	}
