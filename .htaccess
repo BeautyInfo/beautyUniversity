@@ -1,7 +1,7 @@
 RewriteEngine On
 #redirect port 443 to 80
 RewriteCond %{SERVER_PORT} 443
-RewriteCond %{REQUEST_URI} beautyUniversity
+RewriteCond %{REQUEST_URI} beautyUniversity/data_out/school/university
 RewriteRule ^(.*)$ http://mywebservice.info/$1 [R,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
