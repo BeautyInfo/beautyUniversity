@@ -7,8 +7,7 @@
 	$router = new \Bramus\Router\Router();
 	
 	$router -> before('GET', '/.*', function() {
-		header("HTTP/1.1 301 Moved Permanently");
-		header("Location: https://mywebservice.info/beautyUniversity/");
+		header('X-Powered-By: router');
 	});
 	
 	$router->get('/', function() {
