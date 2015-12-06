@@ -15,6 +15,10 @@
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
+	$router -> before('GET', '/.*', function() {
+		header('X-Powered-By: router');
+	});
+	
 	$router->get('/data_out/school/(\w+)', function($name) {
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
