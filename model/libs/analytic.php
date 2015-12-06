@@ -84,7 +84,10 @@
 				$data = $this -> httpGet("https://mywebservice.info/beautyUniversity/data_out/school/university");
 				$colleges = $handle;
 				$result = $this -> processStr($colleges, $data);
-				return json_encode($result);
+				if($result === null)
+					return "$result is null";
+				else
+					return json_encode($result);
 			}
 		}
 	}
