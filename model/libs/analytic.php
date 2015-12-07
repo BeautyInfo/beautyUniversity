@@ -56,18 +56,21 @@
 				}
 			}
 			
+			$result = 0;
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$message = trim($data[$i]["message"]);
 					for($j=0;$j<count($colleges);$j++) {
 						if(strpos($message, $colleges[$j]["name"]) !== false) {
 							$colleges[$j]["count"] += 1;
+							$result += 1;
 						}
 					}
 				}
 			}
 			
-			return $colleges;
+			//return $colleges;
+			return $result;
 		}
 		
 		public function getAnalyticRes() {
