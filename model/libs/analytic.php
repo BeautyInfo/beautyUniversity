@@ -86,8 +86,15 @@
 		private function calculatePercent($colleges, $sum) {
 			$len = count($colleges);
 			for($count=0;$count<$len;$count++) {
-				$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum * 100, 2);
-				$colleges[$count]["y"] = $colleges[$count]["percent"];
+				if($colleges[$count]["count"] === 0) {
+					unset($colleges[$count]["count"]);
+					unset($colleges[$count]["message"]);
+					unset($colleges[$count]["name"]);
+				}
+				else {
+					$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum * 100, 2);
+					$colleges[$count]["y"] = $colleges[$count]["percent"];
+				}
 			}
 			
 			return $colleges;
