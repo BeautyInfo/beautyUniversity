@@ -57,6 +57,7 @@
 			}
 			
 			$result = 0;
+			$check = true;
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$message = trim($data[$i]["message"]);
@@ -64,12 +65,14 @@
 						if(strpos($message, $colleges[$j]["name"]) !== false) {
 							$colleges[$j]["count"] += 1;
 							$result += 1;
+							$check = false;
+							break;
 						}
-						else {
-							echo $message . "<br>";
-							echo "<br>";
-							echo $colleges[$j]["name"] . "<br>";
-						}
+					}
+					
+					if($check) {
+						echo $message . "<br>";
+						echo "<br>";
 					}
 				}
 			}
