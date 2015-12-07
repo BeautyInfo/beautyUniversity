@@ -104,8 +104,7 @@
 				}
 			}
 			
-			//return $jsonArr;
-			return $result;
+			return $jsonArr;
 		}
 		
 		public function getAnalyticRes() {
