@@ -87,6 +87,7 @@
 			$len = count($colleges);
 			for($count=0;$count<$len;$count++) {
 				$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum * 100);
+				$colleges[$count]["y"] = $colleges[$count]["percent"];
 			}
 			
 			return $colleges;
