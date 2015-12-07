@@ -62,17 +62,12 @@
 				for($i=0;$i<count($data);$i++) {
 					$message = trim($data[$i]["message"]);
 					for($j=0;$j<count($colleges);$j++) {
-						if(strpos($message, $colleges[$j]["name"]) !== false) {
+						if(stristr($message, $colleges[$j]["name"]) !== false) {
 							$colleges[$j]["count"] += 1;
 							$result += 1;
 							$check = false;
 							break;
 						}
-					}
-					
-					if($check) {
-						echo $message . "<br>";
-						echo "<br>";
 					}
 				}
 			}
