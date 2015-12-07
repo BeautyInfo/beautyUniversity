@@ -64,12 +64,15 @@
 					for($j=0;$j<count($colleges);$j++) {
 						$tempArr = explode(",", $colleges[$j]["name"]);
 						foreach($tempArr as $value) {
-							if(count(explode($value, $message)) !== 0) {
+							if(count(explode($value, $message)) > 1) {
 								$colleges[$j]["count"] += 1;
 								$check = false;
 								break;
 							}
 						}
+						
+						if($check === false)
+							break;
 					}
 				}
 			}
