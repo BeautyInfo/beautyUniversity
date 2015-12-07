@@ -34,7 +34,15 @@
 					$result = $model -> dispatchModel("getData", null, $sql);
 					break;
 				case "school_FJU":
-					$sql = "SELECT * FROM beauty_FJU WHERE (message  not LIKE '%男%' OR message LIKE '%女神%') AND LENGTH(message) <= 200 AND LENGTH(message) > 0";
+					$sql = "SELECT * FROM beauty_FJU
+						WHERE (message not LIKE '%男%' OR message LIKE '%女神%')
+						AND LENGTH(message) <= 200 AND LENGTH(message) > 0
+						AND (message NOT LIKE '%影傳四 影傳神丁 丁冠濠個性極佳 僑生之光%'
+						AND message NOT LIKE '%光電三張永欣%'
+						AND message NOT LIKE '%感謝熱心的同學提供小編%'
+						AND message NOT LIKE '%曹佑寧%'
+						AND message NOT LIKE '%余文樂%'
+						AND message NOT LIKE '%帥%')";
 					$result = $model -> dispatchModel("getData", null, $sql);
 					break;
 				case "colleges_university":
