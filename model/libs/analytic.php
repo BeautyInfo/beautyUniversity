@@ -77,9 +77,9 @@
 							break;
 					}
 					
-					if($check === false) {
-							echo $message . "<br>";
-						}
+					if($check) {
+						echo $message . "<br>";
+					}
 				}
 			}
 			
