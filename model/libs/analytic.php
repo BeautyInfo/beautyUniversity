@@ -93,7 +93,7 @@
 					continue;
 				}
 				else {
-					$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum * 100, 2);
+					$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum * 100, 1);
 					$colleges[$count]["y"] = $colleges[$count]["percent"];
 					
 					$jsonArr[$counter]["y"] = $colleges[$count]["y"];
