@@ -105,8 +105,8 @@
 				}
 			}
 			
-			return $summary;
-			//return $colleges;
+			//return $summary;
+			return $colleges;
 		}
 		
 		public function getAnalyticRes() {
