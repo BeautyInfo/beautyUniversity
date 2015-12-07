@@ -75,6 +75,9 @@
 						
 						if($check === false)
 							break;
+						else {
+							echo $message . "<br>";
+						}
 					}
 				}
 			}
