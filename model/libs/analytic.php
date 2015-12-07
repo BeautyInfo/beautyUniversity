@@ -67,6 +67,7 @@
 							if(count(explode($value, $message)) !== 0) {
 								$colleges[$j]["count"] += 1;
 								$check = false;
+								break;
 							}
 						}
 						
