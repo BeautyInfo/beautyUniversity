@@ -56,6 +56,7 @@
 				}
 			}
 
+			$result = 0;
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
@@ -66,6 +67,7 @@
 						foreach($tempArr as $value) {
 							if(count(explode($value, $message)) > 1) {
 								$colleges[$j]["count"] += 1;
+								$result += 1;
 								$check = false;
 								break;
 							}
