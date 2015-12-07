@@ -85,6 +85,7 @@
 		
 		private function calculatePercent($colleges, $sum) {
 			$jsonArr = array();
+			$result = 0;
 			$counter = 0;
 			$len = count($colleges);
 			for($count=0;$count<$len;$count++) {
@@ -98,11 +99,13 @@
 					$jsonArr[$counter]["y"] = $colleges[$count]["y"];
 					$jsonArr[$counter]["name"] = $colleges[$count]["name"];
 					$jsonArr[$counter]["count"] = $colleges[$count]["count"];
+					$result += $colleges[$count]["y"];
 					$counter += 1;
 				}
 			}
 			
-			return $jsonArr;
+			//return $jsonArr;
+			return $result;
 		}
 		
 		public function getAnalyticRes() {
