@@ -65,6 +65,11 @@
 							$colleges[$j]["count"] += 1;
 							$result += 1;
 						}
+						else {
+							echo $message . "<br>";
+							echo "<br>";
+							echo $colleges[$j]["name"] . "<br>";
+						}
 					}
 				}
 			}
