@@ -75,10 +75,11 @@
 						
 						if($check === false)
 							break;
-						else {
+					}
+					
+					if($check === false) {
 							echo $message . "<br>";
 						}
-					}
 				}
 			}
 			
