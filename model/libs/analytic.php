@@ -24,6 +24,7 @@
 		}
 		
 		private function processStr($colleges, $data) {
+			$result = 0;
 			if($this -> name === "university") {
 				$search = array("台", "表特大學", "文化大學", "美和大學", "臺北城市大學", "新生醫護管理學校", "美和護專",
 					"元培科技大學", "醒悟科技大學", "德明", "耕莘", "華夏大學", "臺北商業技術學院", "輔英大學");
@@ -50,13 +51,13 @@
 							continue;
 						if(strpos($message, $colleges[$j]["name"]) !== false) {
 							$colleges[$j]["count"] += 1;
+							$result += 1;
 							break;
 						}
 					}
 				}
 			}
-
-			$result = 0;
+			
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
@@ -76,6 +77,16 @@
 							break;
 					}
 				}
+			}
+			
+			$colleges = $this -> calculatePercent($colleges, $result);
+			return $colleges;
+		}
+		
+		private function calculatePercent($colleges, $sum) {
+			$len = count($colleges);
+			for($count=0;$count<$len;$count++) {
+				$colleges[$count]["percent"] = round($colleges[$count]["count"] / $sum);
 			}
 			
 			return $colleges;
