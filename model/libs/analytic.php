@@ -60,7 +60,7 @@
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
-					$message = trim($data[$i]["message"]);
+					$message = trim($data[$i]["message"], "系");
 					for($j=0;$j<count($colleges);$j++) {
 						if(stristr($message, $colleges[$j]["name"]) !== false) {
 							$colleges[$j]["count"] += 1;
