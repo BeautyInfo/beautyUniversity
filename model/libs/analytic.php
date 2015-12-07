@@ -69,6 +69,10 @@
 							break;
 						}
 					}
+					
+					if($check) {
+						echo $message . "<br>";
+					}
 				}
 			}
 			
