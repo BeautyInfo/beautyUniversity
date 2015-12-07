@@ -61,7 +61,6 @@
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
 					$message = trim($data[$i]["message"]);
-					
 					for($j=0;$j<count($colleges);$j++) {
 						$tempArr = explode(",", $colleges[$j]["name"]);
 						foreach($tempArr as $value) {
@@ -76,15 +75,10 @@
 						if($check === false)
 							break;
 					}
-					
-					if($check) {
-						echo $message . "<br>";
-					}
 				}
 			}
 			
-			//return $colleges;
-			return $result;
+			return $colleges;
 		}
 		
 		public function getAnalyticRes() {
