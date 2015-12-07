@@ -55,8 +55,7 @@
 					}
 				}
 			}
-			
-			$result = 0;
+
 			if($this -> name === "FJU") {
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
@@ -66,7 +65,7 @@
 						$tempArr = explode(",", $colleges[$j]["name"]);
 						foreach($tempArr as $value) {
 							if(count(explode($value, $message)) !== 0) {
-								$result += 1;
+								$colleges[$j]["count"] += 1;
 								$check = false;
 							}
 						}
@@ -74,15 +73,10 @@
 						if($check === false)
 							break;
 					}
-					
-					if($check) {
-						echo $message . "<br>";
-					}
 				}
 			}
 			
-			//return $colleges;
-			return $result;
+			return $colleges;
 		}
 		
 		public function getAnalyticRes() {

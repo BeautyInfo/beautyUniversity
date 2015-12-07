@@ -24,8 +24,7 @@
 	});
 	
 	$router -> get('/data_out/school/colleges/(\w+)', function($name) {
-		//header('Content-Type: application/json; charset=utf-8');
-		header('Content-Type: text/html; charset=utf-8');
+		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
 		$controller = new myController($req);
