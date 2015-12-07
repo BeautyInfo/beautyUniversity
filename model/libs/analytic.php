@@ -97,7 +97,11 @@
 					$colleges[$count]["y"] = $colleges[$count]["percent"];
 					
 					$jsonArr[$counter]["y"] = $colleges[$count]["y"];
-					$jsonArr[$counter]["name"] = $colleges[$count]["name"];
+					$temp = explode(",", $colleges[$count]["name"]);
+					if(count($temp) > 1)
+						$jsonArr[$counter]["name"] = $temp[0];
+					else
+						$jsonArr[$counter]["name"] = $colleges[$count]["name"];
 					$jsonArr[$counter]["count"] = $colleges[$count]["count"];
 					$result += $colleges[$count]["y"];
 					$counter += 1;
