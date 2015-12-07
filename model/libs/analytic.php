@@ -70,9 +70,6 @@
 								break;
 							}
 						}
-						
-						if($check === false)
-							break;
 					}
 				}
 			}
