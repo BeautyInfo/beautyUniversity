@@ -79,7 +79,8 @@
 				}
 			}
 			
-			return $colleges;
+			//return $colleges;
+			return $result;
 		}
 		
 		public function getAnalyticRes() {
