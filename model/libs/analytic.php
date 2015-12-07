@@ -61,15 +61,18 @@
 				for($i=0;$i<count($data);$i++) {
 					$check = true;
 					$message = trim($data[$i]["message"]);
-					$message = str_replace("系", "", $message);
 					
 					for($j=0;$j<count($colleges);$j++) {
-						if(strpos($colleges[$j]["name"], $message) !== false) {
-							$colleges[$j]["count"] += 1;
-							$result += 1;
-							$check = false;
-							break;
+						$tempArr = explode(",", $colleges[$j]["name"]);
+						foreach($tempArr as $value) {
+							if(count(explode($value, $message)) !== 0) {
+								$result += 1;
+								$check = false;
+							}
 						}
+						
+						if($check === false)
+							break;
 					}
 					
 					if($check) {
