@@ -19,20 +19,13 @@
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
+		$check = htmlentities($bool);
 		$controller = new myController($req);
 		
-		if($bool === "no")
-			echo $controller -> indexAction("school_" . $req);
-	});
-	
-	$router->get('/v1/school/(\w+)/analytic/(\w+)', function($name, $bool) {
-		header('Content-Type: application/json; charset=utf-8');
-		ob_start("ob_gzhandler");
-		$req = htmlentities($name);
-		$controller = new myController($req);
-		
-		if($bool === "yes")
+		if($check === "yes")
 			echo $controller -> indexAction("colleges_" . $req);
+		if($check === "no")
+			echo $controller -> indexAction("school_" . $req);
 	});
 	
 	$router->set404(function() {
