@@ -22,7 +22,7 @@
 		$controller = new myController($req);
 		if($bool === "false")
 			echo $controller -> indexAction("school_" . $req);
-		else
+		if($bool === "true")
 			echo $controller -> indexAction("colleges_" . $req);
 	});
 	
