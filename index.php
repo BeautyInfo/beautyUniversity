@@ -15,17 +15,20 @@
 		echo "Welcome to beautyUniversity JSON api";
 	});
 	
-	$router->get('/v1/school/(\w+)/analytic/(\w+)', function($name, $bool) {
+	$router->get('/v1/school/(\w+)/analytic/yes', function($name) {
 		header('Content-Type: application/json; charset=utf-8');
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
-		$check = htmlentities($bool);
 		$controller = new myController($req);
-		
-		if($check === "yes")
-			echo $controller -> indexAction("colleges_" . $req);
-		if($check === "no")
-			echo $controller -> indexAction("school_" . $req);
+		echo $controller -> indexAction("colleges_" . $req);
+	});
+	
+	$router->get('/v1/school/(\w+)/analytic/no', function($name) {
+		header('Content-Type: application/json; charset=utf-8');
+		ob_start("ob_gzhandler");
+		$req = htmlentities($name);
+		$controller = new myController($req);
+		echo $controller -> indexAction("school_" . $req);
 	});
 	
 	$router->set404(function() {
