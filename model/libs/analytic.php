@@ -116,12 +116,12 @@
 			$url = "";
 			if($this -> name === "university") {
 				$fileName = "files/u1_new.json";
-				$url = "http://mywebservice.info/beautyUniversity/data_out/school/university";
+				$url = "http://mywebservice.info/beautyUniversity/v1/school/university/analytic/false";
 			}
 			
 			if($this -> name === "FJU") {
 				$fileName = "files/fju.json";
-				$url = "http://mywebservice.info/beautyUniversity/data_out/school/FJU";
+				$url = "http://mywebservice.info/beautyUniversity/v1/school/FJU/analytic/false";
 			}
 			
 			$handle = $this -> parseFile($fileName);
