@@ -20,9 +20,9 @@
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
 		$controller = new myController($req);
-		if($bool === "false")
+		if($bool === "no")
 			echo $controller -> indexAction("school_" . $req);
-		if($bool === "true")
+		if($bool === "yes")
 			echo $controller -> indexAction("colleges_" . $req);
 	});
 	
