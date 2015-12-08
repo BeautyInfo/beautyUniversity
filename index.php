@@ -20,10 +20,13 @@
 		ob_start("ob_gzhandler");
 		$req = htmlentities($name);
 		$controller = new myController($req);
+		echo $bool;
+		/*
 		if($bool === "no")
 			echo $controller -> indexAction("school_" . $req);
 		if($bool === "yes")
 			echo $controller -> indexAction("colleges_" . $req);
+		*/
 	});
 	
 	$router->set404(function() {
