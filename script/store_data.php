@@ -1,9 +1,9 @@
 <?php
 	set_time_limit(0);
 	//connectDB library
-	require '../libs/connectDB.php';
+	require '../model/libs/connectDB.php';
 	//curl helper function library
-	require '../libs/LIB_http.php';
+	require '../model/libs/LIB_http.php';
 	
 	class storeData {
 		//get Fan's page
