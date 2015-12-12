@@ -1,7 +1,7 @@
 <?php
 	set_time_limit(0);
 	//connectDB library
-	chdir("../model/libs");
+	chdir("/var/www/html/beautyUniversity/model/libs");
 	require 'connectDB.php';
 	//curl helper function library
 	require 'LIB_http.php';
