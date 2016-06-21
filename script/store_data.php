@@ -57,7 +57,7 @@
 				else
 					$sql = "INSERT INTO beauty_FJU(message,obj_id,created_time) VALUES(:message,:object_id,:created_time)";
 
-				$result = $connection -> processData($conn, $sql, $data, "insert-record");
+				$result = $conn -> processData($conn, $sql, $data, "insert-record");
 			
 				switch($result) {
 					case "insert-fail":
@@ -76,5 +76,5 @@
 		$counter += 1;
 	}
 	
-	$connection -> connectClose();
+	$conn = null;
 ?>
