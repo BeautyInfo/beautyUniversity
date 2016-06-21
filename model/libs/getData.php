@@ -9,9 +9,9 @@
 			}
 			else {
 				$result = array();
-				$queryResult = $conn -> query($sql);
+				$queryRes = $conn -> query($sql);
 				$count = 0;
-				while($contentRes = $queryResult -> fetch()) {
+				while($contentRes = $queryRes -> fetch()) {
 					if($contentRes["message"] !== null)
 						$result[$count]["message"] = $contentRes["message"];
 					else
