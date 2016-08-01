@@ -18,8 +18,8 @@
 		
 		private function httpGet($url) {
 			$data = http_get($url, $target = "");
-			$data = $data["FILE"];
-			$data = json_decode($data, true);
+			//$data = $data["FILE"];
+			//$data = json_decode($data, true);
 			return $data;
 		}
 		
