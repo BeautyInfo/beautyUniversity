@@ -130,9 +130,9 @@
 			}
 			else {
 				$data = $this -> httpGet($url);
+				var_dump($data);
 				$colleges = json_decode($handle, true);
 				$result = $this -> processStr($colleges, $data);
-				var_dump($result);
 				//return json_encode($result);
 			}
 		}
