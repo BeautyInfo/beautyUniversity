@@ -132,7 +132,8 @@
 				$data = $this -> httpGet($url);
 				$colleges = json_decode($handle, true);
 				$result = $this -> processStr($colleges, $data);
-				return json_encode($result);
+				var_dump($result);
+				//return json_encode($result);
 			}
 		}
 	}
