@@ -18,8 +18,8 @@
 		
 		private function httpGet($url) {
 			$data = http_get($url, $target = "");
-			//$data = $data["FILE"];
-			//$data = json_decode($data, true);
+			$data = $data["FILE"];
+			$data = json_decode($data, true);
 			return $data;
 		}
 		
@@ -116,12 +116,12 @@
 			$url = "";
 			if($this -> name === "university") {
 				$fileName = "files/u1_new.json";
-				$url = "http://mywebservice.info/beautyUniversity/v1/school/university/analytic/false";
+				$url = "https://mywebservice.info/beautyUniversity/v1/school/university/analytic/false";
 			}
 			
 			if($this -> name === "FJU") {
 				$fileName = "files/fju.json";
-				$url = "http://mywebservice.info/beautyUniversity/v1/school/FJU/analytic/false";
+				$url = "https://mywebservice.info/beautyUniversity/v1/school/FJU/analytic/false";
 			}
 			
 			$handle = $this -> parseFile($fileName);
@@ -130,10 +130,9 @@
 			}
 			else {
 				$data = $this -> httpGet($url);
-				var_dump($data);
 				$colleges = json_decode($handle, true);
 				$result = $this -> processStr($colleges, $data);
-				//return json_encode($result);
+				return json_encode($result);
 			}
 		}
 	}
