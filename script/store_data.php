@@ -1,10 +1,10 @@
 <?php
 	set_time_limit(0);
 	//connectDB library
-	chdir("/var/www/html/beautyUniversity/model/libs");
-	require 'connectDB.php';
+	$filePath = __DIR__.'/../model/libs/';
+	require $filePath.'connectDB.php';
 	//curl helper function library
-	require 'LIB_http.php';
+	require $filePath.'LIB_http.php';
 	
 	class storeData {
 		//get Fan's page

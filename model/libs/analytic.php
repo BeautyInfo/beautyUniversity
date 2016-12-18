@@ -113,15 +113,15 @@
 		
 		public function getAnalyticRes() {
 			$fileName = "";
-			$url = "";
+			$url = "https://beauty.nttu.biz/";
 			if($this -> name === "university") {
 				$fileName = "files/u1_new.json";
-				$url = "https://mywebservice.info/beautyUniversity/v1/school/university/analytic/false";
+				$url .= "beautyUniversity/v1/school/university/analytic/false";
 			}
 			
 			if($this -> name === "FJU") {
 				$fileName = "files/fju.json";
-				$url = "https://mywebservice.info/beautyUniversity/v1/school/FJU/analytic/false";
+				$url .= "beautyUniversity/v1/school/FJU/analytic/false";
 			}
 			
 			$handle = $this -> parseFile($fileName);
